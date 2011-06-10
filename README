@@ -6,8 +6,8 @@ Type out your memoir, and it will write the entry to '~/.memoir/today' and exit 
 an empty line is encountered.
 If the first line is empty, it wont write the entry.
 You can also send a SIGINT to exit the program without side effects.
-Every time a new note is added on a different day, the last notes get named to a file 
-"~/.memoir/memoir-%Y-%m-%d".
+Every time a new note is added on a different day, the current today file gets renamed to 
+"~/.memoir/memoir-%Y-%m-%d" and a new today file is created.
 
 Alternatively, you can run 'm' with any number of arguments.
 Once you run 'm' with the arguments, it will automatically add a one line entry to 
@@ -15,8 +15,13 @@ Once you run 'm' with the arguments, it will automatically add a one line entry 
 
 Format of entries:
 date
-entry
-Entries are seperated by a line of dashes.
+    entry
+Entries are separated by a line of dashes.
 
 Dependencies:
 python3
+
+
+My First Fork =]
+I has been using memoir for a little while, but I wanted it to have its own directory and 
+to split entries up by date and easily get to today's entries.
