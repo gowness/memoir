@@ -16,6 +16,7 @@ if not os.path.exists(memoirDir):
 lines = [ datetime.datetime.now().strftime(timeFormat) + '\n']
 
 if len(sys.argv) > 1:
+    lines.append('    ')
     lines.append(' '.join(sys.argv[ 1: ]))
     lines[-1] += '\n'
 else:
@@ -31,15 +32,17 @@ else:
 
 # only write the entry if the user entered something
 if len(lines) > 1:
-    fRead = open(memoirFile, 'r')
-    strDate = fRead.readline()
-    dtDate = datetime.datetime.strptime(strDate.replace("\n", ""), timeFormat)
-    fRead.close()
-
-    if dtDate.day != datetime.datetime.now().day:
-        os.rename(memoirFile, memoirDir + "memoir-" + dtDate.strftime(fileTimeFormat))
-    else:
-        lines.insert(0, '--------------------\n')
+    try:
+        with open(memoirFile, 'r') as fRead:
+            strDate = fRead.readline()
+            dtDate = datetime.datetime.strptime(strDate.replace("\n", ""), timeFormat)
+            fRead.close()
+            if dtDate.date() != datetime.date.today():    
+                os.rename(memoirFile, memoirDir + "memoir-" + dtDate.strftime(fileTimeFormat))
+            else:
+                lines.insert(0, '--------------------\n')
+    except IOError:
+        pass
 
     with open(memoirFile, 'a') as f:
         f.writelines(lines)
