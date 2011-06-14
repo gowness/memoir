@@ -16,12 +16,12 @@
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #93b266; margin-bottom: 3px; }
+    h1 { font-size: 3.8em; color: #579c4e; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #93b266; }
-    h3 { text-align: center; color: #93b266; }
-    a { color: #93b266; }
+    h2 { font-size: 1.5em; color: #579c4e; }
+    h3 { text-align: center; color: #579c4e; }
+    a { color: #579c4e; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
@@ -42,14 +42,31 @@
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
     </div>
 
-    <h1><a href="http://github.com/gowness/memoir">memoir</a>
-      <span class="small">by <a href="http://github.com/gowness">gowness</a></span></h1>
+<h1><a href="http://github.com/gowness/memoir">memoir</a>
+<span class="small">by <a href="http://github.com/gowness">gowness</a></span></h1>
 
-    <div class="description">
-      A minimal cli diary - directory mode
-    </div>
-
-    <h2>Dependencies</h2>
+<div class="description">
+A minimal cli diary - directory mode
+</div>
+	
+<h2>Usage</h2>
+<p>
+Run memoir by typing 'm' into a terminal.
+Type out your memoir, and it will write the entry to '~/.memoir/today' and exit as soon as 
+an empty line is encountered.
+If the first line is empty, it wont write the entry.
+You can also send a SIGINT to exit the program without side effects.
+Every time a new note is added on a different day, the current today file gets renamed to 
+"~/.memoir/memoir-%Y-%m-%d" and a new today file is created.
+Alternatively, you can run 'm' with any number of arguments.
+Once you run 'm' with the arguments, it will automatically add a one line entry to 
+'~/.memoir/today'.
+</p>
+<h2>Format of entries</h2>
+<p>	date </p>
+<p>	entry </p>		
+Entries are separated by a line of dashes.</p>
+<h2>Dependencies</h2>
 <p>python3</p>
 <h2>Install</h2>
 <p>copy m to /usr/bin if desired.</p>
@@ -59,22 +76,22 @@
 <p> (biga05@gmail.com)<br/>      </p>
 
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/gowness/memoir/zipball/master">zip</a> or
-      <a href="http://github.com/gowness/memoir/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/gowness/memoir</pre>
-    </p>
+<h2>Download</h2>
+<p>
+ You can download this project in either
+<a href="http://github.com/gowness/memoir/zipball/master">zip</a> or
+<a href="http://github.com/gowness/memoir/tarball/master">tar</a> formats.
+</p>
+<p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+  by running:
+<pre>$ git clone git://github.com/gowness/memoir</pre>
+ </p>
 
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/gowness/memoir">gowness/memoir</a>
-    </div>
+<div class="footer">
+  get the source code on GitHub : <a href="http://github.com/gowness/memoir">gowness/memoir</a>
+</div>
 
-  </div>
+</div>
 
   
 </body>
